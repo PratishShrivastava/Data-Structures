@@ -1,0 +1,50 @@
+// logic building
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    // making array
+    int arr[] = { 5, 95, 15, 2, 5, 54, 654, 16, 84, 3, 46, 247, 5, 46, 4, 861, 684, 64, 465, 1 };
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int first, second, third;
+  
+    third = first = second = arr[0];
+    for (int i = 0; i < n ; i ++){
+        if (arr[i] > first){
+            third = second;
+            second = first;
+            first = arr[i];
+        }
+         else if (arr[i] > second){
+            third = second;
+            second = arr[i];
+        }
+  
+        else if (arr[i] > third){
+            third = arr[i];
+        }
+    }
+    
+    cout << "Three largest elements " <<first <<" "<< second <<" "<< third<<endl;
+  
+    third = first = second = arr[0];
+    for (int i = 0; i < n ; i ++){
+        if (arr[i] < first){
+            third = second;
+            second = first;
+            first = arr[i];
+        }
+         else if (arr[i] < second){
+            third = second;
+            second = arr[i];
+        }
+  
+        else if (arr[i] < third){
+            third = arr[i];
+        }
+    }
+    
+    cout << "Three largest elements " <<first <<" "<< second <<" "<< third<<endl;
+    
+    return 0;
+}
